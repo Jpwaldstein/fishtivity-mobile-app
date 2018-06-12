@@ -9,6 +9,7 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import SinglePost from '../screens/SinglePost';
+import ReportsScreen from '../screens/ReportsScreen';
 
 export default TabNavigator(
   {
@@ -17,6 +18,9 @@ export default TabNavigator(
     },
     Links: {
       screen: LinksScreen,
+    },
+    Reports: {
+      screen: ReportsScreen
     },
     // Settings: {
     //   screen: SettingsScreen,
@@ -35,6 +39,9 @@ export default TabNavigator(
                 : 'md-information-circle';
             break;
           case 'Links':
+            iconName = Platform.OS === 'ios' ? `ios-list${focused ? '' : '-outline'}` : 'ion-link';
+            break;
+          case 'Reports':
             iconName = Platform.OS === 'ios' ? `ios-list${focused ? '' : '-outline'}` : 'ion-link';
             break;
           case 'Settings':

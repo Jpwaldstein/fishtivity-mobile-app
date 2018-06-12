@@ -48,7 +48,7 @@ export default class LinksScreen extends React.Component {
                   postTitle: `${item.title.rendered}`,
                   postContent: `${item.content.rendered}`,
                   postFeaturedImage: `${this.hasThumbnail(this.state.siteUrl, item)}`,
-                  postAuthor: `${item.author_meta.display_name}`
+                  postAuthor: `${item._embedded['author'][0].name}`
                   });
                 }}>
                   <Image

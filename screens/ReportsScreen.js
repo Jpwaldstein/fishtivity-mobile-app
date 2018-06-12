@@ -11,7 +11,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 
-export default class LinksScreen extends React.Component {
+export default class ReportsScreen extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -21,7 +21,7 @@ export default class LinksScreen extends React.Component {
     };
   }
   static navigationOptions = {
-    title: 'Articles'
+    title: 'Fishing Reports'
   };
 
   componentDidMount(){
@@ -72,7 +72,7 @@ export default class LinksScreen extends React.Component {
     );
   }
   fetchData = async () => {
-    const response = await fetch("https://fishtivity.net/wp-json/wp/v2/posts?_embed");
+    const response = await fetch("https://fishtivity.net/wp-json/wp/v2/fishing-reports?_embed");
     const json = await response.json();
     this.setState({
       data: json,
